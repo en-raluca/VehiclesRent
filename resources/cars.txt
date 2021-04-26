@@ -1,0 +1,10 @@
+1, 22.49, 105789, true, BLACK, CJ03PNT, AUDI, A6, MANUAL, AC; ESP; ABS; Leather seats; Backup camera, 5, 4, false, DIESEL
+2, 20.99, 245785, true, RED, CJ87PNT, WV, Polo Cross, MANUAL, AC; ABS; Parck assist; Navigation system, 5, 4, false, DIESEL
+3, 25.99, 214569, true, WHITE, CJ03PNT, Audi, Q5, AUTOMATIC, AC; ABS; Parck assist; Heated seats, 5, 4, false, PETROL
+4, 30.45, 10758, true, RED, CJ98PNT, Mercedes, GLE, AUTOMATIC, Leather seats; AC; ABS; ESP; Navigation system, 5, 4 , false, DIESEL
+5, 42.19, 142569, true, WHITE, CJ12PNT, VW, PASSAT, AUTOMATIC, AC; ABS; Heated seats, 5, 4, false, PETROL
+6, 45.49, 56789, true, BLACK, CJ30PNT, TOYOTA, PRIUS, MANUAL, AC; ESP; ABS; Leather seats; Backup camera, 5, 4, true, HYBRID
+7, 19.49, 256789, true, RED, CJ02PNT, DACIA, SPRING, AUTOMATIC, AC; ESP; ABS, 5, 4, true, ELECTRIC
+8, 50.99, 100885, true, RED, CJ99PNT, PORCHE, 911, MANUAL, AC; ABS; Parck assist; Navigation system, 2, 2, false, PETROL
+9, 9.99, 107885, true, BLACK, CJ91PNT, DACIA, SANDERO, MANUAL, AC, 5, 4, false, PETROL
+10, 45.99, 207885, false, RED, CJ45PNT, AUDI, Q7, AUTOMATIC, AC; ABS; Parck assist; Navigation system, 5, 4, false, PETROL

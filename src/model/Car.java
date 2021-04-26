@@ -2,21 +2,21 @@ package model;
 
 import java.util.List;
 
-public class Car extends Vehicle{
+public class Car extends Vehicle implements Discountable{
     private String registrationPlate;
     private String type;
     private String model;
     private GearType gearType;
-    public List<String> features;
-    public int numberOfSeats;
-    public int numberOfDors;
-    public boolean isElectric;
-    public FuelType fuelType;
+    private List<String> features;
+    private int numberOfSeats;
+    private int numberOfDors;
+    private boolean isElectric;
+    private FuelType fuelType;
 
 
 
     public Car(int id, double pricePerDay, int numberOfKm, boolean availability, Colour colour,
-                String registrationPlates, String type, String model, GearType gearType, List<String> features, int numberOfSeats,
+                String registrationPlate, String type, String model, GearType gearType, List<String> features, int numberOfSeats,
                int numberOfDors, boolean isElectric, FuelType fuelType) {
         super(id, pricePerDay, numberOfKm, availability, colour);
         this.registrationPlate=registrationPlate;
@@ -65,4 +65,11 @@ public class Car extends Vehicle{
     }
 
 
+    @Override
+    public void applyDiscount(int percent) {
+        double newPrice;
+        double actualPrice = getPricePerDay();
+        newPrice = actualPrice - (actualPrice * percent /100);
+        setPricePerDay(newPrice);
+    }
 }

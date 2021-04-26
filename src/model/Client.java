@@ -54,7 +54,7 @@ public class Client {
     @Override
     public String toString() {
         return "The Client " + surName  + name + " with personal security number " + personalSecurityNumber  +
-                ", ID " + id + ", adress " + adress  +", phone number " + phoneNumber +", email " + email + ", has Driver Licence " +
+                ", ID " + id + ", adress " + adress  +", phone number +40" + phoneNumber +", email " + email + ", has Driver Licence " +
                 hasDriverLicence ;
     }
 

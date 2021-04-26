@@ -1,0 +1,3 @@
+//(int id, double pricePerDay, int numberOfKm, boolean isAvailable, Colour colour, String model, double batteryLevel)
+11, 9.78, 15, true, RED, Pegas, 91.5
+12, 10.88, 85, true, WHITE, Pegas, 91.5

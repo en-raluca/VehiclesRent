@@ -3,29 +3,48 @@ package manager;
 import model.Client;
 import model.Rent;
 
-public class Manager {
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class ClientManager {
     //UPDATE
-    public void updateNrOfkm(){
 
-    }
-    public void updatePricePerDay(){
-
-    }
-    public void updateAvailability(){
-
-    }
-    public void updateClientEmail(){
-
-    }
-    public void updateIfRentedCarIsReturned(){
-
+    public void updateClientEmail(List<Client> clientList, int clientID, String newEmail) {
+        for (Client client : clientList) {
+            if (client.getId() == clientID) {
+                client.setEmail(newEmail);
+            }
+        }
     }
 
     //Find Search
-    public Rent findRent(int rereservationId){
+
+    public Client findClient(List<Client> clientList, int id){
+        Client client = null;
+        for(Client c : clientList){
+            if(c.getId()== id){
+                client=c;
+            }
+        }
+        return client;
 
     }
-    public Client findClient(int id){
+    //Map
+    public Map<Integer,List<String>> extractRentIdByClient(List<Client> clientList,List<Rent> rentList ){
+        Map<Integer, List<String>> resultMap = new HashMap<>();
+        for(Client c : clientList){
+            List<String> clientRentList = new ArrayList<>();
+            for(Rent rent : rentList){
+                if(c.getId()==rent.getClientId()){
+                    clientRentList.add(rent.getReservationId());
+                }
+            }
+            resultMap.put(c.getId(),clientRentList);
+        }
 
+        return resultMap;
     }
+
 }

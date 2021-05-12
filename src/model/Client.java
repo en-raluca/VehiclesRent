@@ -9,12 +9,12 @@ public class Client {
     private String personalSecurityNumber;
     private int id;
     private String adress;
-    private int phoneNumber;
+    private String phoneNumber;
     private String email;
     private boolean hasDriverLicence;
 
 
-    public Client(String surName, String name, String personalSecurityNumber, int id, String adress, int phoneNumber, String email, boolean hasDriverLicence) {
+    public Client(String surName, String name, String personalSecurityNumber, int id, String adress, String phoneNumber, String email, boolean hasDriverLicence) {
         this.surName = surName;
         this.name = name;
         this.personalSecurityNumber = personalSecurityNumber;
@@ -41,8 +41,8 @@ public class Client {
     public String getAdress() {return adress;}
     public void setAdress(String adress) {this.adress = adress;}
 
-    public int getPhoneNumber() {return phoneNumber;}
-    public void setPhoneNumber(int phoneNumber) {this.phoneNumber = phoneNumber;}
+    public String getPhoneNumber() {return phoneNumber;}
+    public void setPhoneNumber(String phoneNumber) {this.phoneNumber = phoneNumber;}
 
     public String getEmail() {return email;}
     public void setEmail(String email) {this.email = email;}

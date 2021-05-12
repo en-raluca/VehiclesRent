@@ -1,3 +1,10 @@
-//(int id, double pricePerDay, int numberOfKm, boolean isAvailable, Colour colour, String model, double batteryLevel)
 11, 9.78, 15, true, RED, Pegas, 91.5
-12, 10.88, 85, true, WHITE, Pegas, 91.5
+12, 10.88, 85, true, WHITE, Xiaomi, 91.5
+13, 8.75, 59, true, BLACK, Xiaomi, 50.7
+14, 12.75, 159, true, BLUE, Voltarom, 100
+15, 7.65, 96, false, RED, Segway, 15.5
+16, 20.45, 200, true, RED, Hiboy, 45.6
+17, 17.65, 157, false, BLACK, Segway, 94.3
+18, 16.46, 123, true, RED, Qingor, 78.9
+19, 31.21, 196, true, RED, Pegas, 10.5
+20, 18.94, 215, true, WHITE, Segway, 85.5

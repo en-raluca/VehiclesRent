@@ -13,7 +13,7 @@ import java.util.List;
 
 public class DataReader {
     private static final String CARPATH = "./resources/cars.txt";
-    private static final String SCOOTERPATH = "./resources/electricScooters.txt";
+    private static final String SCOOTERPATH = "./resources/electricScooter.txt";
     public List<Car> readCarsFromFile() {
         List<Car> listOfCars = new ArrayList<>();
         File carFile = new File(CARPATH);

@@ -1,0 +1,11 @@
+Hello, Bogdan Pintea
+
+Today 2021-05-05T20:13:11.471 you have successfully booked the vehicle Audi A6
+The booking information are:
+The reservation with ID is: 105.
+Your ID is: 4.
+The vehicle you selected ID is: 15 and has the registration plate : CJ03PNT.
+You booked the vehicle for 6 days , starting from: 2021-12-29T12:00.
+Your total cost is 79.85EUR
+
+Thank you for renting from us.

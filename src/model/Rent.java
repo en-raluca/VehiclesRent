@@ -1,20 +1,22 @@
 package model;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Rent {
     private String reservationId;
-    private Client client;
-    private String vehicleId;
+    private int clientId;
+    private int vehicleId;
     private int daysNumber;
-    private Date startDate;
+    private LocalDateTime startDate;
     private double totalPrice;
-    private Date reservationDate;
+    private LocalDateTime reservationDate;
     private boolean isReturned;
 
-    public Rent(String reservationId, Client client, String vehicleId, int daysNumber, Date startDate, double totalPrice, Date reservationDate, boolean isReturned) {
+    public Rent(String reservationId, int clientId , int vehicleId, int daysNumber, LocalDateTime startDate, double totalPrice, LocalDateTime reservationDate, boolean isReturned) {
         this.reservationId = reservationId;
-        this.client = client;
+        this.clientId = clientId;
         this.vehicleId = vehicleId;
         this.daysNumber = daysNumber;
         this.startDate = startDate;
@@ -31,19 +33,19 @@ public class Rent {
         this.reservationId = reservationId;
     }
 
-    public Client getClient() {
-        return client;
+    public int getClientId() {
+        return clientId;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setClient(int clientId) {
+        this.clientId = clientId;
     }
 
-    public String getVehicleId() {
+    public int getVehicleId() {
         return vehicleId;
     }
 
-    public void setVehicleId(String vehicleId) {
+    public void setVehicleId(int vehicleId) {
         this.vehicleId = vehicleId;
     }
 
@@ -55,11 +57,11 @@ public class Rent {
         this.daysNumber = daysNumber;
     }
 
-    public Date getStartDate() {
+    public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
     }
 
@@ -71,11 +73,11 @@ public class Rent {
         this.totalPrice = totalPrice;
     }
 
-    public Date getReservationDate() {
+    public LocalDateTime getReservationDate() {
         return reservationDate;
     }
 
-    public void setReservationDate(Date reservationDate) {
+    public void setReservationDate(LocalDateTime reservationDate) {
         this.reservationDate = reservationDate;
     }
 
@@ -89,7 +91,7 @@ public class Rent {
 
     @Override
     public String toString() {
-        return "The reservation with ID " + reservationId  +  " by client: " + client  +
+        return "The reservation with ID " + reservationId  +  " client ID: " + clientId  +
                 ", of the vehicle ID: " + vehicleId + ", with the numeber of days: " + daysNumber  +", starting from: " + startDate +
                 ", total cost; " + totalPrice + ", day of the reservation  " +  reservationDate +", is returned: "+isReturned;
     }

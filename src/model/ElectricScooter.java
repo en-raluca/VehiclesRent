@@ -1,6 +1,6 @@
 package model;
 
-public class ElectricScooter extends Vehicle{
+public class ElectricScooter extends Vehicle implements Discountable{
     public String model;
     public double batteryLevel;
 
@@ -17,11 +17,17 @@ public class ElectricScooter extends Vehicle{
     public double getBatteryLevel(){return batteryLevel;}
 
 
-    //        return "The car with ID: " + id +" has " + colour+ " colour "+", has:"+numberOfKm+"km" + ", and costs: " + pricePerDay + " per Day "
-//                + ", is available " + isAvailable ;
     @Override
     public String toString(){
         return "The electric scooter " + model +"with ID: " + getId() +" has " + getColour()+ " colour "+", has:"+getNumberOfKm()+"km" + ", and costs: "
                 + getPricePerDay() + " per Day " + ",has " + batteryLevel +"% battery" + ", is available " + isAvailable();
+    }
+
+    @Override
+    public void applyDiscount(int percent) {
+        double newPrice;
+        double actualPrice = getPricePerDay();
+        newPrice = actualPrice - (actualPrice * percent /100);
+        setPricePerDay(newPrice);
     }
 }

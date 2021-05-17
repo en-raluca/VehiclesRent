@@ -2,55 +2,72 @@ package Main;
 
 import data.DataCreator;
 import data.DataReader;
-import data.DataWriter;
+import manager.ClientManager;
+import manager.RentManager;
+import manager.VehicleManager;
 import model.*;
 
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
 
-        Vehicle vehicle = new Vehicle(15, 75.56, 125636, true, Colour.BLACK);
-        Client client1 = new Client("Pintea", "Bogdan", "1871229453189", 1, "Cluj-Napoca,Strada Rasaritului, nr 2",
-                "0740881807","pinteabogdan@gmail.com",true);
-        //1, 22.49, 105789, true, BLACK, CJ03PNT, AUDI, A6, MANUAL, AC; ESP; ABS; Leather seats; Backup camera, 5, 4, false, DIESEL
-        Car car = new Car(1, 22.49, 105789, true,Colour.BLACK,"CJ03PNT","Audi","A6",GearType.MANUAL,
-                Arrays.asList("AC; ESP; ABS; Leather seats; Backup camera"), 5,4,false, FuelType.DIESEL);
 
-        String stringDate5 = "29/12/2021 12:00:00";
-        LocalDateTime ldt = LocalDateTime.now();
-        DateTimeFormatter dtf5 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        LocalDateTime startDate5 = LocalDateTime.parse(stringDate5, dtf5);
-        Rent rent5 = new Rent("105", 4, 15, 6, startDate5, 79.85, ldt, true);
-        DataWriter dw = new DataWriter();
-
-        dw.generateRentFile(rent5,vehicle, client1,car );
 
         DataCreator dataCreator = new DataCreator();
         List<Rent> listOfRent = dataCreator.createListeOfRent();
 
         List<Client> listOfClient = dataCreator.createListOfClients();
 
-        System.out.println(listOfRent);
-        System.out.println(listOfClient);
-
-        DataReader dataReader = new DataReader();
+         DataReader dataReader = new DataReader();
         List<Car> carList = dataReader.readCarsFromFile();
         List<ElectricScooter> electricScooterList = dataReader.readElectricScooterFromFile();
 
-        System.out.println(carList);
-        System.out.println(electricScooterList);
 
-        List<Vehicle> vehicleList = new ArrayList<>();
-        vehicleList.addAll(carList);
-        vehicleList.addAll(electricScooterList);
+        ClientManager clientManager = new ClientManager();
+        clientManager.updateClientEmail(listOfClient, 1, "pinteaionutb@yahoo.com");
+        System.out.println(clientManager.findClient(listOfClient, 1));
+        System.out.println(clientManager.extractRentIdByClient(listOfClient, listOfRent));
 
-        System.out.println(vehicleList);
+
+        VehicleManager vehicleManager = new VehicleManager();
+        System.out.println(vehicleManager.isAnyCarWithXNumberOfDorsandSeats(carList,4,5));
+        System.out.println(vehicleManager.extractCarByColour(carList, Colour.BLUE));
+        Map<Integer,List<String>> met =  vehicleManager.extractClientByVehicleID(carList, listOfClient, listOfRent);
+        System.out.println(met);
+        vehicleManager.updateNrOfkm(carList, 2, 250000);
+        vehicleManager.updateAvailability(carList, 7, false);
+        vehicleManager.updatePricePerDay(carList, 5, 43.19);
+        System.out.println(vehicleManager.getCarListThatHasMoreKmThen(carList, 100000));
+        System.out.println("Lista tuturor masinilor este " + carList);
+        boolean vehicleMethodResult = vehicleManager.searchCarByFeature(carList, "ABS");
+        System.out.println(vehicleMethodResult + "\n");
+        boolean vehicleMethodResult1 = vehicleManager.isAnyCarWithXNumberOfDorsandSeats(carList, 2, 2);
+        System.out.println(vehicleMethodResult1+"\n");
+        boolean vehicleMethodResult2 = vehicleManager.isAnyCarElectric(carList);
+        System.out.println(vehicleMethodResult2+"\n");
+        boolean vehicleMethodResult3 = vehicleManager.isCarWithLessKm(carList, 200000);
+        System.out.println(vehicleMethodResult3+"\n");
+        System.out.println(vehicleManager.getCarListCheaperThen(carList, 10.54));
+        System.out.println(vehicleManager.getCarListWithSameColour(carList, Colour.RED));
+        System.out.println(vehicleManager.getCarListWithSameFeature(carList,"ABS"));
+
+
+        RentManager rentManager = new RentManager();
+        rentManager.updateIfRentedCarIsReturned(listOfRent, 1, true);
+        System.out.println(rentManager.findRentByReservationId(listOfRent, "102"));
+        boolean rentMethod1 = rentManager.checkIfCarIsRented(listOfRent, 7);
+        System.out.println(rentMethod1);
+        boolean rentMethod2 = rentManager.searchCarRentedMoreThenXDays(listOfRent, 14);
+        System.out.println(rentMethod2);
+        System.out.println(rentManager.getCarListAvailabile(carList));
+        System.out.println(rentManager.getCarListNeverRented(carList,listOfRent));
+        System.out.println(rentManager.getMostRentedCars(carList,listOfRent));
+        System.out.println(rentManager.getTheClientWithMostsRents(listOfClient,listOfRent));
+        System.out.println(rentManager.getTheLongestRent(listOfRent));
+        System.out.println(rentManager.getMostExpensiveRent(listOfRent));
 
 
     }

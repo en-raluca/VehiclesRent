@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -53,7 +52,11 @@ public class DataReader {
                 Colour colour = Colour.valueOf(colourS);
                 GearType gearType = GearType.valueOf(gearTypeS);
                 String[] featureArray = featuresS.split(";");
-                List<String> features = Arrays.asList(featureArray);
+                List<String> features = new ArrayList<>();
+                for(String s : featureArray){
+                    features.add(s.trim());
+                }
+
                 int numberOfSeats = Integer.parseInt(numberOfSeatsS);
                 int numberOfDors = Integer.parseInt(numberOfDorsS);
                 boolean isElectric = Boolean.parseBoolean(isElectricS);

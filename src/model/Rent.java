@@ -93,7 +93,7 @@ public class Rent {
     public String toString() {
         return "The reservation with ID " + reservationId  +  " client ID: " + clientId  +
                 ", of the vehicle ID: " + vehicleId + ", with the numeber of days: " + daysNumber  +", starting from: " + startDate +
-                ", total cost; " + totalPrice + ", day of the reservation  " +  reservationDate +", is returned: "+isReturned;
+                ", total cost; " + totalPrice + ", day of the reservation  " +  reservationDate +", is returned: "+isReturned + "\n";
     }
 
     @Override

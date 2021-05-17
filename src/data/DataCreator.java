@@ -61,22 +61,22 @@ public class DataCreator {
         String stringDate2 = "25/08/2021 12:00:00";
         DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime startDate2 = LocalDateTime.parse(stringDate2, dtf2);
-        Rent rent2 = new Rent("102", 2, 12, 7, startDate2, 450.45, ldt, true);
+        Rent rent2 = new Rent("102", 1, 3, 7, startDate2, 450.45, ldt, true);
 
         String stringDate3 = "30/09/2021 12:00:00";
         DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime startDate3 = LocalDateTime.parse(stringDate3, dtf3);
-        Rent rent3 = new Rent("103", 3, 15, 14, startDate3, 703.79, ldt, true);
+        Rent rent3 = new Rent("103", 3, 4, 14, startDate3, 703.79, ldt, true);
 
         String stringDate4 = "24/09/2021 12:00:00";
         DateTimeFormatter dtf4 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime startDate4 = LocalDateTime.parse(stringDate4, dtf4);
-        Rent rent4 = new Rent("104", 3, 11, 2, startDate4, 57.94, ldt, false);
+        Rent rent4 = new Rent("104", 3, 7, 2, startDate4, 57.94, ldt, false);
 
         String stringDate5 = "29/12/2021 12:00:00";
         DateTimeFormatter dtf5 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime startDate5 = LocalDateTime.parse(stringDate5, dtf5);
-        Rent rent5 = new Rent("105", 4, 15, 6, startDate5, 79.85, ldt, true);
+        Rent rent5 = new Rent("105", 4, 12, 6, startDate5, 79.85, ldt, true);
 
         String stringDate6 = "15/07/2021 12:00:00";
         DateTimeFormatter dtf6 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
@@ -86,12 +86,12 @@ public class DataCreator {
         String stringDate7 = "04/11/2021 12:00:00";
         DateTimeFormatter dtf7 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime startDate7 = LocalDateTime.parse(stringDate7, dtf7);
-        Rent rent7 = new Rent("107", 6, 19, 2, startDate7, 75.24, ldt, false);
+        Rent rent7 = new Rent("107", 6, 8, 2, startDate7, 75.24, ldt, false);
 
         String stringDate8 = "04/11/2021 12:00:00";
         DateTimeFormatter dtf8 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime startDate8 = LocalDateTime.parse(stringDate8, dtf8);
-        Rent rent8 = new Rent("108", 8, 19, 10, startDate8, 267.78, ldt, true);
+        Rent rent8 = new Rent("108", 8, 8, 10, startDate8, 267.78, ldt, true);
 
         String stringDate9 = "25/12/2021 12:00:00";
         DateTimeFormatter dtf9 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");

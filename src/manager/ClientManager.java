@@ -3,10 +3,7 @@ package manager;
 import model.Client;
 import model.Rent;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ClientManager {
     //UPDATE
@@ -46,5 +43,30 @@ public class ClientManager {
 
         return resultMap;
     }
+    //Remove/Add
+    public void addAClient(List<Client> clientList, Client client){
+        clientList.add(client);
+    }
+
+    public void removeAClientById(int clientId, List<Client> clientList){
+        Client clientToBeRemoved = null;
+        for(Client c : clientList){
+            if(c.getId() == clientId){
+                clientToBeRemoved = c;
+            }
+        }
+        clientList.remove(clientToBeRemoved);
+    }
+
+    public void removeClient(List<Client> clientList, Client clientToBeDeleted){
+        Iterator<Client> iterator = clientList.iterator();
+        while (iterator.hasNext()){
+            Client client1 = iterator.next();
+            if(client1.getId() == clientToBeDeleted.getId()){
+                clientList.remove(client1);
+            }
+        }
+    }
 
 }
+

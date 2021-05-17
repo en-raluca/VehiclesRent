@@ -58,12 +58,11 @@ public class Car extends Vehicle implements Discountable{
 
     @Override
     public String toString(){
-       return "The car " + model + type + " with the ID " + getId() +" has " + getColour()+ " colour "+", has:"+getNumberOfKm()+"km"
-               + ", and costs: " + getPricePerDay() + " per Day "+ ", with the registration plate "+registrationPlate + ", has "+
-               numberOfSeats +" seats and" + numberOfDors +"dors" +",is " + gearType + ", is electric " + isElectric
-            + ", and the fuel type is " + fuelType;
+       return "The car " + model+" " + type + " with the ID " + getId() +" has " + getColour()+ " colour "+", has:"+getNumberOfKm()+"km"
+               + ", and costs: " + getPricePerDay() + " EURO per Day "+ ", with the registration plate "+registrationPlate + ", has "+
+               numberOfSeats +" seats and " + numberOfDors +" dors, is " + gearType + ", is electric " + isElectric
+            + ", and the fuel type is " + fuelType + " ,features "+features+  "\n";
     }
-
 
     @Override
     public void applyDiscount(int percent) {

@@ -1,8 +1,6 @@
 package model;
 
 
-import java.util.Objects;
-
 public class Client {
     private String surName;
     private String name;
@@ -53,9 +51,9 @@ public class Client {
 
     @Override
     public String toString() {
-        return "The Client " + surName  + name + " with personal security number " + personalSecurityNumber  +
+        return "The Client " + surName +" " + name + " with personal security number " + personalSecurityNumber  +
                 ", ID " + id + ", adress " + adress  +", phone number +40" + phoneNumber +", email " + email + ", has Driver Licence " +
-                hasDriverLicence ;
+                hasDriverLicence + "\n";
     }
 
     @Override
